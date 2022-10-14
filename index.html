@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <p class="top-text">100 TL ve üzeri kargo bedava + koşulsuz ve 365 gün değişim / iade garantisi.</p>
+        </header>
+        <div class="top-content">
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i><input type="text" id="search" placeholder="Ara"></input>
+            </div>
+            <div class="message">
+                <label> Çıkış Yap</label>
+            </div>
+            <div class="shopping">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <label>Alışveriş Sepeti</label>
+                <label id="adet">(0)</label>
+                <label class="pay">Ödeme <span class="totalprice">()</span>₺</label>
+            </div>
+        </div>
+        <div class="sidebar">
+
+            <ul class="menu">
+                <li class="menu-item">Ana Sayfa</li>
+                <li class="menu-item">Katalog</li>
+                <li class="menu-item">Özel Baskılı T-Shirt</li>
+                <li class="menu-item">Hakkımızda</li>
+                <li class="menu-item">Sık Sorulan Sorular</li>
+            </ul>
+            <div class="social-media">
+                <ul class="sm-list">
+                    <li><i class="link-icon fab fa-twitter"></i></li>
+                    <li><i class="link-icon fab fa-instagram"></i></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars hidden"></i>
+        </div>
+        <div class="main-content">
+            <div class="product-image">
+                <img src="https://cdn.shopify.com/s/files/1/0066/9212/products/css_600x600.jpg?v=1596741930">
+            </div>
+            <div class="product-details">
+                <div class="product-title">
+                    <h2>CSS Sucks T-Shirt</h2>
+                </div>
+                <div class="product-price">
+                    <h2>₺59.00</h2>
+                </div>
+                <div class="shipping-detail">
+                    <label>Vergiler dahil <u>Kargo</u> ödeme kısmında hesaplanacak.</label>
+                </div>
+                <div class="options">
+                    <div class="s-container">
+                        <label>Size</label>
+                        <select class="size">
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                        </select>
+                    </div>
+                    <div class="q-container" style="margin-left: 10px;">
+                        <label>Adet</label>
+                        <input class="quantity" type="number" value="0"></input>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button class="add-to-basket">SEPETE EKLE</button>
+                    <button class="quick-buy">HEMEN SATIN ALIN</button>
+                </div>
+                <div class="social">
+                    <ul class="sm-list">
+                        <i class="link-icon fab fa-twitter"></i>
+                        <li><sup>Paylaş</sup></li>
+                        <i class="link-icon fab fa-instagram"></i>
+                        <li><sup>Tweet</sup></li>
+                        <i class="link-icon fab fa-pinterest"></i>
+                        <li><sup>Pinle</sup></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="size-table">
+                <h3>Beden Tablosu</h3>
+                <table class="tblsize" border="1">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td>S</td>
+                            <td>M</td>
+                            <td>L</td>
+                            <td>XL</td>
+                            <td>2XL</td>
+                            <td>3XL</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>En(cm)</td>
+                            <td>49</td>
+                            <td>51</td>
+                            <td>53</td>
+                            <td>55</td>
+                            <td>57</td>
+                            <td>59</td>
+                        </tr>
+                        <tr>
+                            <td>Boy(cm)</td>
+                            <td>71</td>
+                            <td>73</td>
+                            <td>75</td>
+                            <td>77</td>
+                            <td>79</td>
+                            <td>81</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <footer>
+            <div class="col">
+                <h2>Yardım</h2>
+                <ul class="help">
+                    <li class="help-item">Mesafeli Satış Sözleşmesi</li>
+                    <li class="help-item">Teslimat</li>
+                    <li class="help-item">Gizlilik</li>
+                    <li class="help-item">İptal & İade</li>
+                </ul>
+            </div>
+            <div class="col">
+                <h2>İletişim</h2>
+                <p class="footer-description">
+                    kuzgun.io ile ilgili herhangi bir konuda bilgi almak,
+                    istek, öneri veya şikayetler için info@kuzgun.io adresine
+                    mail atabilirsiniz.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        var labelAdet = document.getElementById("adet");
+        var btnAddBasket = document.querySelector(".add-to-basket");
+        var inpQuantity = document.querySelector(".quantity");
+        var totalprice = document.querySelector(".totalprice");
+
+        btnAddBasket.addEventListener("click", function () {
+
+            labelAdet.innerText = "(" + inpQuantity.value + ")";
+            totalprice.innerText = ((inpQuantity.value) * 59)
+
+        })
+
+        inpQuantity.addEventListener("change", function () {
+            var q = inpQuantity.value;
+            if (q < 0) {
+                alert("ürün negatif değer içeremez!")
+                inpQuantity.value = 1;
+            }
+        })
+        var size = document.querySelector(".size");
+        var s = document.querySelector(".small");
+        var m = document.querySelector(".medium");
+        var l = document.querySelector(".large");
+
+        size.addEventListener("change", function () {
+            if (size.value === "Medium") {
+                alert("Medium bedenimiz kalmamıştır.")
+
+            } else {
+                console.log(size.value);
+            }
+        });
+    </script>
+</body>
+
+</html>
